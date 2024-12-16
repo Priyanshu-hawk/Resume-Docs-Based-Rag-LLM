@@ -121,15 +121,17 @@ async def new_chat():
         print(f"Error processing request: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
     
-import asyncio, uvicorn
-from pyngrok import ngrok
 
-async def start_uvicorn():
-    # Create a public URL using ngrok
-    public_url = ngrok.connect(7000)
-    print("Public URL for server (Copy this):", public_url)
-    config = uvicorn.Config(app, host="0.0.0.0", port=7000)
-    server = uvicorn.Server(config)
-    await server.serve()
+if __name__ == "__main__":
+    import asyncio, uvicorn
+    from pyngrok import ngrok
 
-    await asyncio.create_task(start_uvicorn())
+    async def start_uvicorn():
+        # Create a public URL using ngrok
+        public_url = ngrok.connect(7000)
+        print("Public URL for server (Copy this):", public_url)
+        config = uvicorn.Config(app, host="0.0.0.0", port=7000)
+        server = uvicorn.Server(config)
+        await server.serve()
+
+        await asyncio.create_task(start_uvicorn())
