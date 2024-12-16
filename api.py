@@ -107,6 +107,20 @@ async def chat(request: Request, data: str = Form(...), file: Optional[UploadFil
         print(f"Error processing request: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
     
+@app.post("/new_chat")
+async def new_chat():
+    try:
+        chat_history = []
+        # delete all files in the upload directory
+        for file in os.listdir(UPLOAD_DIR):
+            file_path = os.path.join(UPLOAD_DIR, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+        return {"response": "Chat history cleared."}
+    except Exception as e:
+        print(f"Error processing request: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+    
 import asyncio, uvicorn
 from pyngrok import ngrok
 

@@ -116,4 +116,5 @@ if st.button("Start New Chat"):
     st.session_state.chat_history = []
     st.session_state.file_uploaded = False
     st.session_state.file_info = None
+    requests.post(f"{backend_url}/new_chat")
     st.rerun()
