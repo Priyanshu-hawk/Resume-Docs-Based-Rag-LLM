@@ -1,0 +1,21 @@
+llama_index
+pypdf
+transformers 
+einops 
+accelerate 
+langchain
+llama-index-llms-huggingface
+accelerate
+bitsandbytes
+langchain_community
+llama-index-embeddings-langchain
+sentence-transformers
+
+# server
+fastapi 
+uvicorn 
+streamlit 
+requests 
+pyngrok 
+python-multipart
+python-dotenv
