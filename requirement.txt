@@ -1,14 +1,14 @@
-llama_index
+llama-index==0.12.5
 pypdf
-transformers 
+transformers==4.46.3
 einops 
 accelerate 
-langchain
-llama-index-llms-huggingface
+langchain==0.3.12
+llama-index-llms-huggingface==0.4.1
 accelerate
-bitsandbytes
-langchain_community
-llama-index-embeddings-langchain
+bitsandbytes==0.45.0
+langchain-community==0.3.12
+llama-index-embeddings-langchain==0.3.0
 sentence-transformers
 
 # server
