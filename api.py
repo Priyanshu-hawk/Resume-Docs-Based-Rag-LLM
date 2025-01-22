@@ -135,3 +135,5 @@ if __name__ == "__main__":
         await server.serve()
 
         await asyncio.create_task(start_uvicorn())
+        
+    asyncio.run(start_uvicorn())
