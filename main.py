@@ -24,8 +24,8 @@ def get_llm_settings(contect_window: int, max_new_token: int, ):
         generate_kwargs={"temperature": 0.0, "do_sample": False},
         system_prompt=system_prompt,
         query_wrapper_prompt=query_wrapper_prompt,
-        tokenizer_name='meta-llama/Llama-3.2-1B-Instruct',
-        model_name='meta-llama/Llama-3.2-1B-Instruct',
+        tokenizer_name='meta-llama/Meta-Llama-3.1-8B-Instruct',
+        model_name='meta-llama/Meta-Llama-3.1-8B-Instruct',
         device_map='auto',
         model_kwargs={"torch_dtype": torch.float16, "quantization_config": BitsAndBytesConfig(num_bits=8)}
     )
